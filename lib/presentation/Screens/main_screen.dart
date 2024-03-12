@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tool_box/presentation/Widgets/drawer.dart';
 
 class MainScren extends StatefulWidget {
   const MainScren({super.key});
@@ -13,37 +14,40 @@ class _MainScrenState extends State<MainScren> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-          child: Container(
-            child: Text('hola'),
-          ),
+      drawer: const DrawerMenu(),
+      appBar: AppBar(
+        title: const Text(
+          'Home',
+          style: TextStyle(color: Colors.white),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.shifting,
-          currentIndex: selectedIdex,
-          elevation: 0,
-          onTap: (value) {
-            setState(() {
-              selectedIdex = value;
-            });
-          },
-          items: const [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined),
-                activeIcon: Icon(Icons.home),
-                label: 'prueba',
-                backgroundColor: Colors.cyan),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.smart_display_outlined),
-                activeIcon: Icon(Icons.smart_display),
-                label: 'User',
-                backgroundColor: Colors.cyan),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.info_outline),
-                activeIcon: Icon(Icons.info),
-                label: 'prueba',
-                backgroundColor: Colors.cyan),
-          ],
-        ));
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
+        backgroundColor: Colors.cyan,
+      ),
+      body: Center(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            'assets/toolbox.webp',
+            width: 250,
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          const Text(
+            'Bienvenido a Tool Box !!!',
+            style: TextStyle(
+              fontFamily: AutofillHints.fullStreetAddress,
+              fontSize: 30,
+            ),
+          ),
+          const SizedBox(
+            height: 100,
+          ),
+        ],
+      )),
+    );
   }
 }

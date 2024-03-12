@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tool_box/config/theme/app_theme.dart';
 import 'package:tool_box/presentation/Screens/main_screen.dart';
 
 void main() {
@@ -10,9 +11,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainScren(),
+      theme: AppTheme().getTheme(),
+      home: const MainScren(),
     );
   }
 }
