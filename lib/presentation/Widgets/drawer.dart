@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tool_box/presentation/Screens/gender_screen.dart';
+import 'package:tool_box/presentation/Screens/main_screen.dart';
 
 class DrawerMenu extends StatefulWidget {
   const DrawerMenu({super.key});
@@ -42,7 +44,8 @@ class _DrawerMenuState extends State<DrawerMenu> {
             ),
             title: const Text('Home'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const MainScren()));
             },
           ),
           ListTile(
@@ -51,7 +54,10 @@ class _DrawerMenuState extends State<DrawerMenu> {
             ),
             title: const Text('Gender Predictor'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const GenderPredictor()));
             },
           ),
           ListTile(
