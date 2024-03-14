@@ -12,7 +12,7 @@ class GenderPredictor extends StatefulWidget {
 
 class _GenderPredictState extends State<GenderPredictor> {
   Gender? gender;
-  TextEditingController gController = TextEditingController();
+  TextEditingController tController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class _GenderPredictState extends State<GenderPredictor> {
       body: Center(
         child: Column(children: [
           TextField(
-              controller: gController,
+              controller: tController,
               keyboardType: TextInputType.text,
               decoration: const InputDecoration(labelText: 'Nombre')),
           const SizedBox(height: 25),
@@ -61,7 +61,7 @@ class _GenderPredictState extends State<GenderPredictor> {
 
   Future<void> getGender() async {
     final response =
-        await Dio().get('https://api.genderize.io/?name=${gController.text}');
+        await Dio().get('https://api.genderize.io/?name=${tController.text}');
     setState(() {
       gender = Gender.fromJson(response.data);
     });

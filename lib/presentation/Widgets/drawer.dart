@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tool_box/Presentation/Screens/about_me.dart';
 import 'package:tool_box/Presentation/Screens/age_screen.dart';
+import 'package:tool_box/Presentation/Screens/university_screen.dart';
+import 'package:tool_box/Presentation/Screens/weather_screen.dart';
 import 'package:tool_box/presentation/Screens/gender_screen.dart';
 import 'package:tool_box/presentation/Screens/main_screen.dart';
 
@@ -35,6 +38,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
               ),
             ),
             currentAccountPicture: Image.asset('assets/my-foto.JPG'),
+            //icono
             // currentAccountPicture: Icon(
             //   Icons.person,
             //   size: 75,
@@ -81,7 +85,10 @@ class _DrawerMenuState extends State<DrawerMenu> {
             ),
             title: const Text('University Search'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const UniversityScreen()));
             },
           ),
           ListTile(
@@ -90,7 +97,10 @@ class _DrawerMenuState extends State<DrawerMenu> {
             ),
             title: const Text('Weather'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const WeatherScreen()));
             },
           ),
           ListTile(
@@ -108,7 +118,10 @@ class _DrawerMenuState extends State<DrawerMenu> {
             ),
             title: const Text('About Me'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const AboutMeScreen()));
             },
           ),
         ],

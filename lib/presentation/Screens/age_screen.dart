@@ -13,7 +13,7 @@ class AgePredictor extends StatefulWidget {
 class _AgePredictState extends State<AgePredictor> {
   Age? age;
   bool execution = false;
-  TextEditingController gController = TextEditingController();
+  TextEditingController tController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class _AgePredictState extends State<AgePredictor> {
       body: Center(
         child: Column(children: [
           TextField(
-              controller: gController,
+              controller: tController,
               keyboardType: TextInputType.text,
               decoration: const InputDecoration(labelText: 'Nombre')),
           const SizedBox(height: 25),
@@ -74,7 +74,7 @@ class _AgePredictState extends State<AgePredictor> {
 
   Future<void> getAge() async {
     final response =
-        await Dio().get('https://api.agify.io/?name=${gController.text}');
+        await Dio().get('https://api.agify.io/?name=${tController.text}');
     setState(() {
       age = Age.fromJson(response.data);
       execution = true;
