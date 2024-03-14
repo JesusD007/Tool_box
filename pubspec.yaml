@@ -10,6 +10,7 @@ dependencies:
   dio: ^5.0.2
   flutter:
     sdk: flutter
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_lints: ^3.0.0
@@ -19,7 +20,19 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+      #Menu
+    - 'assets/my-foto.JPG'
+      #Gender
     - 'assets/toolbox.webp'
     - 'assets/w-symbol.webp'
     - 'assets/m-symbol.png'
     - 'assets/white_background.jpg'
+      #Age
+    - 'assets/old-man.jpg'
+    - 'assets/adult-man.avif'
+    - 'assets/young-man.jpg'
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/my-foto.JPG"

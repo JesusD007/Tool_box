@@ -20,7 +20,7 @@ class _GenderPredictState extends State<GenderPredictor> {
       drawer: const DrawerMenu(),
       appBar: AppBar(
         title: const Text(
-          'Home',
+          'Gender Predictor',
           style: TextStyle(color: Colors.white),
         ),
         iconTheme: const IconThemeData(
@@ -45,7 +45,6 @@ class _GenderPredictState extends State<GenderPredictor> {
           const SizedBox(
             height: 25,
           ),
-          // Text(gender?.gender ?? ''),
           if (gender != null)
             Image.asset(
               gender!.gender == 'male'

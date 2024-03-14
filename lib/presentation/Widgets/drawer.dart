@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:tool_box/Presentation/Screens/age_screen.dart';
 import 'package:tool_box/presentation/Screens/gender_screen.dart';
 import 'package:tool_box/presentation/Screens/main_screen.dart';
 
@@ -18,25 +20,26 @@ class _DrawerMenuState extends State<DrawerMenu> {
         // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: [
-          const UserAccountsDrawerHeader(
-            decoration: BoxDecoration(color: Colors.cyan),
-            accountName: Text(
+          UserAccountsDrawerHeader(
+            decoration: const BoxDecoration(color: Colors.cyan),
+            accountName: const Text(
               "Jesús Domingo Rodriguez M.",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
             ),
-            accountEmail: Text(
+            accountEmail: const Text(
               "jesusd.jr45@gmail.com",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
             ),
-            currentAccountPicture: Icon(
-              Icons.person,
-              size: 75,
-              color: CupertinoColors.lightBackgroundGray,
-            ),
+            currentAccountPicture: Image.asset('assets/my-foto.JPG'),
+            // currentAccountPicture: Icon(
+            //   Icons.person,
+            //   size: 75,
+            //   color: CupertinoColors.lightBackgroundGray,
+            //),
           ),
           ListTile(
             leading: const Icon(
@@ -66,7 +69,10 @@ class _DrawerMenuState extends State<DrawerMenu> {
             ),
             title: const Text('Age Predictor'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const AgePredictor()));
             },
           ),
           ListTile(
